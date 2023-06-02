@@ -27,5 +27,55 @@
   // 0.39.3
   ```
   
+  (2) node.js 18.16.0 버전 설치
+  ```
+  % nvm install 18.16.0
+  ```
+  
   #### d. Database 테이블 생성 sql
+  ```sql
+  show databases;
+create database aresa_apart;
+use aresa_apart;
+
+CREATE TABLE `HistoricalPrice` (
+	`historicalPriceId`	INT	NOT NULL,
+	`apartId`	INT	NOT NULL,
+	`year`	INT	NOT NULL,
+	`month`	INT	NOT NULL,
+	`status`	VARCHAR(10)	NOT NULL	DEFAULT 'ACTIVE'	COMMENT 'ACTIVE:활성화 INACTIVE:비활성화 DELETED:삭제됨',
+	`createdAt`	TIMESTAMP	NOT NULL	DEFAULT current_timestamp	COMMENT '생성일시'
+);
+
+CREATE TABLE `Apartment` (
+	`apartId`	INT	NOT NULL,
+	`apartName`	VARCHAR(45)	NOT NULL,
+	`location`	VARCHAR(255)	NOT NULL,
+	`saleType`	VARCHAR(20)	NULL	COMMENT 'SALE:매매 LUMP-SUM:전세 RENT:월세',
+	`saleStatus`	VARCHAR(20)	NOT NULL	DEFAULT 'ONSALE'	COMMENT 'ONSALE:분양중 SOLD:분양완료 ORDERED:거래진행중',
+	`status`	VARCHAR(10)	NOT NULL	DEFAULT 'ACTIVE'	COMMENT 'ACTIVE:활성화 INACTIVE:비활성화 DELETED:삭제됨',
+	`createdAt`	TIMESTAMP	NOT NULL	DEFAULT current_timestamp	COMMENT '생성일시'
+);
+
+CREATE TABLE `FuturePrice` (
+	`futurePriceId`	INT	NOT NULL,
+	`apartId`	INT	NOT NULL,
+	`year`	INT	NOT NULL,
+	`month`	INT	NOT NULL,
+	`status`	VARCHAR(10)	NOT NULL	DEFAULT 'ACTIVE'	COMMENT 'ACTIVE:활성화 INACTIVE:비활성화 DELETED:삭제됨',
+	`createdAt`	TIMESTAMP	NOT NULL	DEFAULT current_timestamp	COMMENT '생성일시'
+);
+
+ALTER TABLE `HistoricalPrice` ADD CONSTRAINT `PK_HISTORICALPRICE` PRIMARY KEY (
+	`historicalPriceId`
+);
+
+ALTER TABLE `Apartment` ADD CONSTRAINT `PK_APARTMENT` PRIMARY KEY (
+	`apartId`
+);
+
+ALTER TABLE `FuturePrice` ADD CONSTRAINT `PK_FUTUREPRICE` PRIMARY KEY (
+	`futurePriceId`
+);
+  ```
 ---
