@@ -1,0 +1,22 @@
+{
+  "name": "aresa_assignment",
+  "version": "1.0.0",
+  "description": "### 1. 개발 환경 세팅 방식   #### a. Database 설치 과정 기술   (1) MySQL 홈페이지에서 DMG 파일 다운로드 및 로컬 설치",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Minnie5382/aresa_assignment.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Minnie5382/aresa_assignment/issues"
+  },
+  "homepage": "https://github.com/Minnie5382/aresa_assignment#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
