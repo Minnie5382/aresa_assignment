@@ -19,7 +19,13 @@
   
   
   #### c. Backend 설치 command
-  
+  (1) Homebrew로 nvm 설치
+  ```
+  % brew update
+  % brew install nvm
+  % nvm -v
+  // 0.39.3
+  ```
   
   #### d. Database 테이블 생성 sql
 ---
