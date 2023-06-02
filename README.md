@@ -27,9 +27,16 @@
   // 0.39.3
   ```
   
-  (2) node.js 18.16.0 버전 설치
+  (2) node.js 18.16.0 + Express 설치
   ```
   % nvm install 18.16.0
+  ```
+  
+  (3) npm + express 설치
+  ```
+  % cd /Users/minnie/aresa_assignment
+  % npm init
+  % npm install express
   ```
   
   #### d. Database 테이블 생성 sql
