@@ -1,4 +1,4 @@
-# 아리사코리아 입사 과제 
+## 아리사코리아 입사 과제 
 ### 23.06.02 ~
 
 ### 1. 개발 환경 세팅 방식
@@ -16,7 +16,15 @@
   <img width="600" alt="스크린샷 2023-06-02 오후 6 55 04" src="https://github.com/Minnie5382/aresa_assignment/assets/97179789/a35edec1-1d86-4ab3-a5d6-a41ad4e99180">
   
   #### b. Frontend 설치 command
-  
+  (1) vue-cli 라이브러리 설치
+  ```
+  % sudo npm install -g @vue/cli
+  ```
+
+  (2) vue 프로젝트 생성 및 실행
+  ```
+  % vue create app
+  ```
   
   #### c. Backend 설치 command
   (1) Homebrew로 nvm 설치
@@ -85,4 +93,11 @@ ALTER TABLE `FuturePrice` ADD CONSTRAINT `PK_FUTUREPRICE` PRIMARY KEY (
 	`futurePriceId`
 );
   ```
+
+
+### 2. 서비스 실행 방식
+#### (1) Frontend 실행 command
+
+#### (2) Backend 실행 command
+
 ---
