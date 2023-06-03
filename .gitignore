@@ -119,3 +119,6 @@ dist
 
 # 보안
 package-lock.json
+
+# db
+server/db.js

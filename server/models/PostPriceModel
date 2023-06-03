@@ -1,0 +1,48 @@
+const db = require('../db');
+
+class postPriceModel {
+  constructor(aptId, year, monthStart, monthEnd) { // get 요청을 위한 파라미터
+    this.aptId = aptId;
+    this.year = year;
+    this.monthStart = monthStart;
+    this.monthEnd = monthEnd;
+  }
+
+  // constructor(aptId, year, monthStart, ...values) { // post 요청을 위한 파라미터
+  //   this.aptId = aptId;
+  //   this.year = year;
+  //   this.monthStart = monthStart;
+  //   this.values = [];
+  //   for (value in values) {
+  //       this.values.push(value);
+  //   }
+  // }
+
+  static postHistoricalPrices(aptId, year, monthStart, ...values) {
+    const postHisPriceQuery = 'INSERT INTO HistoricalPrice (aptId, year, month, price) VALUES (?, ?, ?, ?)';
+
+    for (i of this.values.length) {
+        var month = this.monthStart + i;
+        const postHisPriceParams = [this.aptId, this.year, month, values[i]] ;
+        db.query(postHisPriceQuery, postHisPriceParams, (err, res) => {
+            if (err) throw err;
+            console.log('Post saved:', this);
+        });
+    }
+  }
+
+  static postFuturePrices(aptId, year, monthStart, ...values) {
+    const postFuturePriceQuery = 'INSERT INTO FuturePrice (aptId, year, month, price) VALUES (?, ?, ?, ?)';
+
+    for (i of this.values.length) {
+        var month = this.monthStart + i;
+        const postFuturePriceParams = [this.aptId, this.year, month, values[i]] ;
+        db.query(postFuturePriceQuery, postFuturePriceParams, (err, res) => {
+            if (err) throw err;
+            console.log('Post saved:', this);
+        });
+    }
+  }
+}
+
+module.exports = postPriceModel;
