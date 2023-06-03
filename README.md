@@ -50,12 +50,13 @@
   #### d. Database 테이블 생성 sql
   ```sql
   show databases;
-create database aresa_apart;
-use aresa_apart;
+  create database aresa_apart;
+  use aresa_apart;
 
-CREATE TABLE `HistoricalPrice` (
-	`historicalPriceId`	INT	AUTO_INCREMENT PRIMARY KEY,
-	`apartId`	INT	NOT NULL,
+  CREATE TABLE `HistoricalPrice` (
+	`historicalPriceId`	INT	PRIMARY KEY AUTO_INCREMENT,
+	`aptId`	INT	NOT NULL,
+	`price`	INT	NOT NULL,
 	`year`	INT	NOT NULL,
 	`month`	INT	NOT NULL,
 	`status`	VARCHAR(10)	NOT NULL	DEFAULT 'ACTIVE'	COMMENT 'ACTIVE:활성화 INACTIVE:비활성화 DELETED:삭제됨',
@@ -63,8 +64,8 @@ CREATE TABLE `HistoricalPrice` (
 );
 
 CREATE TABLE `Apartment` (
-	`apartId`	INT	AUTO_INCREMENT PRIMARY KEY,
-	`apartName`	VARCHAR(45)	NOT NULL,
+	`aptId`	INT	PRIMARY KEY AUTO_INCREMENT,
+	`aptName`	VARCHAR(45)	NOT NULL,
 	`location`	VARCHAR(255)	NOT NULL,
 	`saleType`	VARCHAR(20)	NULL	COMMENT 'SALE:매매 LUMP-SUM:전세 RENT:월세',
 	`saleStatus`	VARCHAR(20)	NOT NULL	DEFAULT 'ONSALE'	COMMENT 'ONSALE:분양중 SOLD:분양완료 ORDERED:거래진행중',
@@ -73,8 +74,9 @@ CREATE TABLE `Apartment` (
 );
 
 CREATE TABLE `FuturePrice` (
-	`futurePriceId`	INT	AUTO_INCREMENT PRIMARY KEY,
-	`apartId`	INT	NOT NULL,
+	`futurePriceId`	INT	PRIMARY KEY AUTO_INCREMENT,
+	`aptId`	INT	NOT NULL,
+	`price`	INT	NOT NULL,
 	`year`	INT	NOT NULL,
 	`month`	INT	NOT NULL,
 	`status`	VARCHAR(10)	NOT NULL	DEFAULT 'ACTIVE'	COMMENT 'ACTIVE:활성화 INACTIVE:비활성화 DELETED:삭제됨',
