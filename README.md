@@ -6,7 +6,7 @@
   (1) MySQL 홈페이지에서 DMG 파일 다운로드 및 로컬 설치
 
   (2) Workbench로 원격 접속 
-  
+
   <img width="600" alt="스크린샷 2023-06-02 오후 5 35 55" src="https://github.com/Minnie5382/aresa_assignment/assets/97179789/43c9d738-7ca6-4c06-a8cb-f49411911c36">
 
 <br>
@@ -54,7 +54,7 @@ create database aresa_apart;
 use aresa_apart;
 
 CREATE TABLE `HistoricalPrice` (
-	`historicalPriceId`	INT	NOT NULL,
+	`historicalPriceId`	INT	AUTO_INCREMENT PRIMARY KEY,
 	`apartId`	INT	NOT NULL,
 	`year`	INT	NOT NULL,
 	`month`	INT	NOT NULL,
@@ -63,7 +63,7 @@ CREATE TABLE `HistoricalPrice` (
 );
 
 CREATE TABLE `Apartment` (
-	`apartId`	INT	NOT NULL,
+	`apartId`	INT	AUTO_INCREMENT PRIMARY KEY,
 	`apartName`	VARCHAR(45)	NOT NULL,
 	`location`	VARCHAR(255)	NOT NULL,
 	`saleType`	VARCHAR(20)	NULL	COMMENT 'SALE:매매 LUMP-SUM:전세 RENT:월세',
@@ -73,7 +73,7 @@ CREATE TABLE `Apartment` (
 );
 
 CREATE TABLE `FuturePrice` (
-	`futurePriceId`	INT	NOT NULL,
+	`futurePriceId`	INT	AUTO_INCREMENT PRIMARY KEY,
 	`apartId`	INT	NOT NULL,
 	`year`	INT	NOT NULL,
 	`month`	INT	NOT NULL,
@@ -81,23 +81,16 @@ CREATE TABLE `FuturePrice` (
 	`createdAt`	TIMESTAMP	NOT NULL	DEFAULT current_timestamp	COMMENT '생성일시'
 );
 
-ALTER TABLE `HistoricalPrice` ADD CONSTRAINT `PK_HISTORICALPRICE` PRIMARY KEY (
-	`historicalPriceId`
-);
-
-ALTER TABLE `Apartment` ADD CONSTRAINT `PK_APARTMENT` PRIMARY KEY (
-	`apartId`
-);
-
-ALTER TABLE `FuturePrice` ADD CONSTRAINT `PK_FUTUREPRICE` PRIMARY KEY (
-	`futurePriceId`
-);
   ```
 
 
 ### 2. 서비스 실행 방식
-#### (1) Frontend 실행 command
+#### a. Frontend 실행 command
+  (1) path 모듈 설치
+  ```
+  npm install path --save
+  ```
 
-#### (2) Backend 실행 command
+#### b. Backend 실행 command
 
 ---
