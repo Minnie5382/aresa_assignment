@@ -1,30 +1,32 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const app = express();
+const path = require('path');
 port = 8080;
 
-app.use(bodyParser.json());
-
-const historicalPriceRoutes = require("./routes/HistoricalPrice");
-const futurePriceRoutes = require("./routes/FuturePrice");
-
-app.use("/aresa-api/historical_price", historicalPriceRoutes);
-app.use("/aresa-api/future_price", futurePriceRoutes);
+// path 설정
+app.set('view engine', 'ejs'); 
+app.set('views', path.join(__dirname, '/views/')); 
 
 
+// router 설정
+const historicalPriceRouter = require("./routes/HistoricalPrice.js");
+const futurePriceRouter = require("./routes/FuturePrice.js");
+
+// app.use(express.json());
+app.use(historicalPriceRouter);
+app.use(futurePriceRouter);
+
+// 에러 처리
+app.use((req, res, next) => {
+    res.status(404).send('Page Not found.')
+})
+
+app.use((req, res, next) => {
+    res.status(500).send("Something's wrong.");
+})
+
+// 서버 실행
 app.listen(port, () => {
     console.log(`listening on ${port}`)
 })
 
-// // POST historical_price
-// app.post('/aresa-api/historical_price/:aptId', (req, res) => {
-//     const aptId = req.params.aptId;
-//     const body = req.body
-
-//     res.send(body)
-// })
-
-// // GET historical_price
-// app.get('/aresa-api/historical_price/:aptId', (req, res) => {
-//     console.log(req.body);
-// })

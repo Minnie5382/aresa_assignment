@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Minnie5382/aresa_assignment#readme",
   "dependencies": {
+    "ejs": "^3.1.9",
     "error": "^10.4.0",
     "express": "^4.18.2",
     "mysql": "^2.18.1",

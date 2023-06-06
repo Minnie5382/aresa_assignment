@@ -1,14 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const controller = require('./Controller');
 
-router.get('/',(req, res) => { 
-    const body = req.body;
-    console.log(body);
-    res.send("get localhost:8080/aresa-api/future_price");
-    console.log(body);
-})
-router.post('/',(req,res) => { 
-    res.send('post localhost:8080/aresa-api/future_price')
-})
+router.use(express.json());
+router.get("/aresa-api/future_price", controller.getFuturePrices)
+router.post("/aresa-api/future_price", controller.postFuturePrices)
 
 module.exports = router;
