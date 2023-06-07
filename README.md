@@ -88,11 +88,13 @@ CREATE TABLE `FuturePrice` (
 
 ### 2. 서비스 실행 방식
 #### a. Frontend 실행 command
-  (1) path 모듈 설치
   ```
-  npm install path --save
+  
   ```
 
 #### b. Backend 실행 command
+  ```
+  node server/server.js
+  ```
 
 ---
