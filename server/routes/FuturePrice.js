@@ -6,11 +6,11 @@ router.post("/aresa-api/future_price", controller.postFuturePrices)
 router.get("/aresa-api/future_price", controller.getFuturePrices)
 
 router.get('/add-future-price', (req, res, next) => {
-    res.render('postHistoricalPrices')
+    res.render('postFuturePrices')
 })
 
 router.get('/check-future-price', (req, res, next) => {
-    res.render('getHistoricalPrices')
+    res.render('getFuturePrices')
 })
 
 module.exports = router;
