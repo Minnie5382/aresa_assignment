@@ -89,12 +89,25 @@ CREATE TABLE `FuturePrice` (
 ### 2. 서비스 실행 방식
 #### a. Frontend 실행 command
   ```
-  
+  % npm run serve
   ```
 
 #### b. Backend 실행 command
   ```
-  node server/server.js
+  % npm start
   ```
+
+### 3. 예제 실행 Step 별 화면 변경사항
+#### a. DB 에 아무 정보 없을 때 화면
+#### b. POST historical_price 에 임의의 값 post
+    1) post curl 커멘드
+    
+    2) post 이후 새로고침 화면
+
+#### c. POST futurel_price 에 임의의 값 post
+    1) post curl 커멘드
+    
+    2) post 이후 새로고침 화면
+
 
 ---
