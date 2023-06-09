@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미래 가격 조회 페이지</title>
+</head>
+<body>
+    <div>
+        <h3>
+            <%= aptId %> 번 아파트 가격 결과
+        </h3>
+        <% for (let price of prices) { %>
+        <div>
+            <%= year %>년 <%= monthStart %>월 가격 : <%= price %> 만원
+        </div>
+        <% monthStart += 1 %>
+        <% } %>
+    </div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아파트 과거 가격 입력</title>
+</head>
+<body>
+    <h1>아파트를 선택하고, 과거 가격을 입력해주세요.</h1>
+    <form class="historical-prices-form" action="/aresa-api/historical_price" method="POST">
+        <div>
+            <div>
+                <span>아파트 번호 : </span>
+                <input type="text" name="aptId">
+            </div>
+            <div >
+                <span>연도 : </span>
+                <input type="text" name="year">
+            </div>
+            <div >
+                <span>시작 월 : </span>
+                <input type="text" name="monthStart">
+            </div>
+            <div>
+                <span>가격 리스트 (콤마로 구분) : </span>
+                <input type="text" name="values">
+            </div>
+            <button type="submit">과거 가격 추가</button>
+        </div>
+    </form>
+    
+</body>
+</html>
